@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+
+body {    
+     /* set bg img use cover for adjust img */
+    background-image: url(./bg.img.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: top;
+}
+
+.container {
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin: auto; /* Center the container */
+    padding: 20px; /* Padding around the container */
+}
+
+h1 {
+    background-color:#102542;
+    color: white;
+    height:5rem;
+    border-radius: 1rem;
+    line-height:5rem; /* for text center */
+    animation-name: zoom;
+    animation-duration: 2000ms;
+}
+@keyframes zoom{
+    0%{height: 3rem;}
+}
+
+.reset {
+    margin-top: 2rem;
+    background-color: #081b31;
+    border-radius: 100%;
+    display: block;
+    align-content: start;
+    width: 6rem;
+    height: 6rem;
+    padding: 1%;
+    margin-bottom: -10%;
+    object-fit: cover; /*/ for fit img don't strech*/
+
+}
+
+.reset:hover{
+transform: scale(1.2);
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 6rem; /* Space between choices */
+}
+
+.choice {
+    margin-top: 9rem;
+    height:190px;
+    width: 190px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s; /* Smooth scaling effect */
+}
+
+.choice:hover {
+    transform: scale(1.2); /* Zoom effect */
+    cursor: pointer; /* cursor convert into pointer */
+    background-color: black; /* when hover create bg as black */
+    
+}
+
+img {
+    height: 150px;
+    width: 150px; 
+    object-fit: cover; /* img stretch nahi ho or div me cover ho jaye */
+    border-radius: 50%; /* make img shape round */
+}
+
+/* option/choice ko centre karo  */
+.score-board {  
+    display: flex;
+    justify-content: center;
+    color:darkgoldenrod;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-top: 1rem;
+    gap: 15rem; /* Space between scores */
+}
+
+#user-score, #comp-score {
+    font-size: 5rem; /* target score increase size */
+}
+
+#msg { /* msg puri line le raha hai usko bas apne content jitani jagah do */
+    background-color: #081b31;
+    color: aliceblue;
+    font-size: 2rem;
+    display: inline;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-right: 6%;
+}
+
+.msg-container {
+    margin-top: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .choice {
+        height: 150px; /* Smaller height for mobile */
+        width: 150px; /* Smaller width for mobile */
+        margin-top: 5rem; /* Adjust margin for mobile */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Smaller heading for mobile */
+    }
+
+    .score-board {
+        flex-direction: column; /* Stack scores vertically */
+        gap: 2rem; /* Space between scores */
+    }
+
+    #user-score, #comp-score {
+        font-size: 3rem; /* Smaller score size for mobile */
+    }
+
+    #msg {
+        font-size: 1.5rem; /* Smaller message size for mobile */
+    }
+
+    .reset {
+        width: 3rem; /* Smaller reload button */
+        height: 3rem; /* Smaller reload button */
+    }
+}
+
+@media (max-width: 480px) {
+    .choice {
+        height: 120px; width: 120px; /* Further reduce size for very small screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Even smaller heading for very small screens */
+    }
+
+    #user-score, #comp-score {
+        font-size: 2.5rem;
+         /* Further reduce score size */
+    }
+
+    #msg {
+        font-size: 1.2rem; /* Smaller message size for very small screens */
+    }
+
+    .reset {
+        width: 2.5rem; /* Adjust reload button size */
+        height: 2.5rem; /* Adjust reload button size */
+    }
+}
+
